@@ -7,3 +7,5 @@ obj
 # Other files
 
 Glosharp\.sln\.DotSettings\.user
+
+Glosharp\.Tests/config\.json
