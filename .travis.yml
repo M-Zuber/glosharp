@@ -1,5 +1,6 @@
-﻿language: c
-os: windows
+﻿language: csharp
+dotnet: 2.2.103
+dist: xenial
 solution: Glosharp.sln
 script:
     - dotnet restore Glosharp/Glosharp.csproj
