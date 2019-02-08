@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace Glosharp.Models
 {
     /// <summary>
@@ -9,6 +11,7 @@ namespace Glosharp.Models
         /// Personal Access Token
         /// </summary>
         /// <value></value>
+        [JsonProperty(PropertyName = "token")]
         public string Token { get; set; }
     }
 }

@@ -6,6 +6,6 @@ namespace Glosharp.Constants
 {
     public class Endpoint
     {
-        public static string Base = @"https://gloapi.gitkraken.com/v1/glo";
+        public const string Base = @"https://gloapi.gitkraken.com/v1/glo";
     }
 }
