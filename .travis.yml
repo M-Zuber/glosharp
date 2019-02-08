@@ -5,7 +5,7 @@ dist: xenial
 solution: Glosharp.sln
 script:
     - dotnet restore Glosharp/Glosharp.csproj
-    - dotnet restore Glosharp/Glosharp.Test.csproj
     - dotnet build Glosharp/Glosharp.csproj
-    - dotnet build Glosharp/Glosharp.Test.csproj
-    - dotnet test Glosharp/Glosharp.Test.csproj
+    - dotnet restore Glosharp.Tests/Glosharp.Tests.csproj
+    - dotnet build Glosharp.Tests/Glosharp.Tests.csproj
+    - dotnet test Glosharp.Tests/Glosharp.Tests.csproj
