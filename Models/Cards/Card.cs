@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using Glosharp.Models.Labels;
+using Glosharp.Models.Users;
+
 namespace Glosharp.Models.Cards
 {
     public class Card
@@ -18,9 +22,9 @@ namespace Glosharp.Models.Cards
 
         public string ArchivedDate {get;set;}
 
-        //assignees partial user -> id
+        public List<PartialUser> Assignees { get; set; }
 
-        //lables partial lables -> id
+        public List<PartialLabel> Labels { get; set; }
 
         public string DueDate {get;set;}
 

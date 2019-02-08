@@ -1,6 +1,6 @@
-namespace Glosharp.Models.Boards
+namespace Glosharp.Models.Labels
 {
-    public class BoardLabelColor
+    public class LabelColor
     {
         public string R {get;set;}
 

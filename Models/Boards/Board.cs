@@ -17,7 +17,7 @@ namespace Glosharp.Models.Boards
 
         public List<BoardMember> Members {get;set;}
 
-        public DateTime ArchivedDate {get;set;}
+        public string ArchivedDate {get;set;}
 
         
     }
