@@ -8,4 +8,10 @@
     <PackageReference Include="newtonsoft.json" Version="12.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

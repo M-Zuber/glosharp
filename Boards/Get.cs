@@ -21,11 +21,11 @@ namespace Glosharp.Boards
             {
                 try
                 {
-                    client.BaseAddress = new Uri("https://gloapi.gitkraken.com/v1/glo/boards");
+                    client.BaseAddress = new Uri(Constants.Endpoint.Base);
                     client.DefaultRequestHeaders.Authorization = 
                         new AuthenticationHeaderValue("Bearer", config.Token);
 
-                    var response = await client.GetAsync("");
+                    var response = await client.GetAsync(Constants.BoardEndpoints.Boards);
                     response.EnsureSuccessStatusCode();
                     var responseString = await response.Content.ReadAsStringAsync();
 
@@ -52,11 +52,11 @@ namespace Glosharp.Boards
             {
                 try 
                 {
-                    client.BaseAddress = new Uri("https://gloapi.gitkraken.com/v1/glo/boards/");
+                    client.BaseAddress = new Uri(Constants.Endpoint.Base);
                     client.DefaultRequestHeaders.Authorization =
                         new AuthenticationHeaderValue("Bearer", config.Token);
 
-                    var response = await client.GetAsync(boardId);
+                    var response = await client.GetAsync(Constants.BoardEndpoints.Board(boardId));
                     response.EnsureSuccessStatusCode();
                     var responseString = await response.Content.ReadAsStringAsync();
 
