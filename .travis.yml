@@ -1,5 +1,6 @@
 ﻿language: csharp
 dotnet: 2.2.103
+mono: none
 dist: xenial
 solution: Glosharp.sln
 script:
