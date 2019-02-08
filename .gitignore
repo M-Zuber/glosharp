@@ -1,0 +1,7 @@
+# Outputs and stuff
+bin
+obj/
+obj
+
+# Other files
+config.json
