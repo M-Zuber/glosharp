@@ -21,7 +21,7 @@ namespace Glosharp.Tests.Configuration
                 return config;
             }
 
-            var envToken = Environment.GetEnvironmentVariable("Glosharp-Token", EnvironmentVariableTarget.Machine);
+            var envToken = Environment.GetEnvironmentVariable("GlosharpToken", EnvironmentVariableTarget.Machine);
             config.Token = envToken;
             return config;
         }
