@@ -1,4 +1,4 @@
-namespace glosharp.Models
+namespace Glosharp.Models
 {
     /// <summary>
     /// Configuration
