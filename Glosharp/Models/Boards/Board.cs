@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Glosharp.Models.Labels;
 using Glosharp.Models.Users;
 using Newtonsoft.Json;
 
