@@ -1,0 +1,15 @@
+version: 0.2.{build}
+dotnet_csproj:
+  patch: true
+  file: '**\glosharp.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+environment:
+  GlosharpToken:
+    secure: I0wuHAPn/9ocEETw1Q7WP2BCOFrfoD72nkxjsBxSoCEFbWzng5dmBY5YY8Ljr1M5
+build:
+  publish_nuget: true
+  verbosity: normal
