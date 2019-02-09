@@ -3,11 +3,11 @@ image: Visual Studio 2017
 dotnet_csproj:
   patch: true
   file: '**\Glosharp.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+  version: %APPVEYOR_BUILD_VERSION%
+  package_version: %APPVEYOR_BUILD_VERSION%
+  assembly_version: %APPVEYOR_BUILD_VERSION%
+  file_version: %APPVEYOR_BUILD_VERSION%
+  informational_version: %APPVEYOR_BUILD_VERSION%
 environment:
   GlosharpToken:
     secure: I0wuHAPn/9ocEETw1Q7WP2BCOFrfoD72nkxjsBxSoCEFbWzng5dmBY5YY8Ljr1M5
@@ -24,7 +24,7 @@ build_script:
     dotnet build Glosharp.Tests/Glosharp.Tests.csproj
 after_build:
 - cmd: >-
-    dotnet pack Glosharp/Glosharp.csproj -p:PackageVersion=%APPVEYOR_BUILD_VERSION%
+    dotnet pack Glosharp/Glosharp.csproj -p:PackageVersion=%APPVEYOR_BUILD_VERSION% --version-suffix "ALPHA"
 test_script:
 - cmd: >-
     cd Glosharp.Tests
