@@ -1,15 +1,19 @@
-using System;
+using Newtonsoft.Json;
 
 namespace Glosharp.Models.Boards
 {
     public class BoardColumn
     {
+        [JsonProperty(PropertyName = "id")]
         public string Id {get;set;}
 
+        [JsonProperty(PropertyName = "name")]
         public string Name {get;set;}
 
-        public DateTime ArchivedDate {get;set;}
+        [JsonProperty(PropertyName = "archived_date")]
+        public string ArchivedDate {get;set;}
 
-        public DateTime CreatedDate {get;set;}
+        [JsonProperty(PropertyName = "created_date")]
+        public string CreatedDate {get;set;}
     }
 }
