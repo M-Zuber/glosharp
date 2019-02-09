@@ -3,11 +3,11 @@ image: Visual Studio 2017
 dotnet_csproj:
   patch: true
   file: '**\Glosharp.csproj'
-  version: %APPVEYOR_BUILD_VERSION%
-  package_version: %APPVEYOR_BUILD_VERSION%
-  assembly_version: %APPVEYOR_BUILD_VERSION%
-  file_version: %APPVEYOR_BUILD_VERSION%
-  informational_version: %APPVEYOR_BUILD_VERSION%
+  version: $(appveyor_build_version)
+  package_version: $(appveyor_build_version)
+  assembly_version: $(appveyor_build_version)
+  file_version: $(appveyor_build_version)
+  informational_version: $(appveyor_build_version)
 environment:
   GlosharpToken:
     secure: I0wuHAPn/9ocEETw1Q7WP2BCOFrfoD72nkxjsBxSoCEFbWzng5dmBY5YY8Ljr1M5
