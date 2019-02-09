@@ -9,6 +9,8 @@
     <Author>Glosharp</Author>
     <PackageProjectUrl>https://github.com/glosharp/glosharp</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <License>https://www.apache.org/licenses/LICENSE-2.0</License>
   </PropertyGroup>
 
   <ItemGroup>
