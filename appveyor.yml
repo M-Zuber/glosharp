@@ -27,6 +27,9 @@ test_script:
     cd Glosharp.Tests
 
     dotnet test
+artifacts:
+- path: '**\*.nupkg'
+  name: NuGet
 deploy:
 - provider: NuGet
   api_key:
