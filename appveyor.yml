@@ -24,7 +24,7 @@ build_script:
     dotnet build Glosharp.Tests/Glosharp.Tests.csproj
 after_build:
 - cmd: >-
-    dotnet pack Glosharp/Glosharp.csproj -p:PackageVersion='{version}'
+    dotnet pack Glosharp/Glosharp.csproj -p:PackageVersion=%APPVEYOR_BUILD_VERSION%
 test_script:
 - cmd: >-
     cd Glosharp.Tests
