@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Glosharp</PackageId>
+    <Description>C# SDK for GitKraken Glo Boards</Description>
+    <AssemblyName>Glosharp</AssemblyName>
+    <RootNamespace>Glosharp</RootNamespace>
+    <Author>Glosharp</Author>
+    <PackageProjectUrl>https://github.com/glosharp/glosharp</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

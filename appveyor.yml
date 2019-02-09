@@ -1,5 +1,4 @@
 version: 0.2.{build}
-image: Visual Studio 2017
 dotnet_csproj:
   patch: true
   file: '**\glosharp.csproj'
@@ -11,8 +10,6 @@ dotnet_csproj:
 environment:
   GlosharpToken:
     secure: I0wuHAPn/9ocEETw1Q7WP2BCOFrfoD72nkxjsBxSoCEFbWzng5dmBY5YY8Ljr1M5
-  NuGet:
-    secure: QAyphJuWeUivFv7GF8OBVdsKcBslk6xVSfHpAX0T274LyQwdEkrrbalWylFPJWjo
 nuget:
   project_feed: true
 build_script:
@@ -24,6 +21,11 @@ build_script:
     dotnet restore Glosharp.Tests/Glosharp.Tests.csproj
 
     dotnet build Glosharp.Tests/Glosharp.Tests.csproj
+test_script:
+- cmd: >-
+    cd Glosharp.Tests
+
+    dotnet test
 deploy:
 - provider: NuGet
   api_key:
