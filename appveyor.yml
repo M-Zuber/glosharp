@@ -1,4 +1,5 @@
 version: 0.2.{build}
+image: Visual Studio 2017
 dotnet_csproj:
   patch: true
   file: '**\glosharp.csproj'
@@ -13,3 +14,12 @@ environment:
 build:
   publish_nuget: true
   verbosity: normal
+build_script:
+  - cmd: dotnet restore Glosharp/Glosharp.csproj
+  - cmd: dotnet build Glosharp/Glosharp.csproj
+  - cmd: dotnet restore Glosharp.Tests/Glosharp.Tests.csproj
+  - cmd: dotnet build Glosharp.Tests/Glosharp.Tests.csproj
+
+test_script:
+  - cmd: cd Glosharp.Tests
+  - cmd: dotnet xunit
