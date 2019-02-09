@@ -22,4 +22,4 @@ build_script:
 
 test_script:
   - cmd: cd Glosharp.Tests
-  - cmd: dotnet xunit
+  - cmd: dotnet test
