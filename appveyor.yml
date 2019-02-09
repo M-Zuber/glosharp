@@ -2,7 +2,7 @@ version: 0.2.{build}
 image: Visual Studio 2017
 dotnet_csproj:
   patch: true
-  file: '**\glosharp.csproj'
+  file: '**\Glosharp.csproj'
   version: '{version}'
   package_version: '{version}'
   assembly_version: '{version}'
