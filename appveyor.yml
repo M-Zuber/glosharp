@@ -11,15 +11,20 @@ dotnet_csproj:
 environment:
   GlosharpToken:
     secure: I0wuHAPn/9ocEETw1Q7WP2BCOFrfoD72nkxjsBxSoCEFbWzng5dmBY5YY8Ljr1M5
-build:
-  publish_nuget: true
-  verbosity: normal
+  NuGet:
+    secure: QAyphJuWeUivFv7GF8OBVdsKcBslk6xVSfHpAX0T274LyQwdEkrrbalWylFPJWjo
+nuget:
+  project_feed: true
 build_script:
-  - cmd: dotnet restore Glosharp/Glosharp.csproj
-  - cmd: dotnet build Glosharp/Glosharp.csproj
-  - cmd: dotnet restore Glosharp.Tests/Glosharp.Tests.csproj
-  - cmd: dotnet build Glosharp.Tests/Glosharp.Tests.csproj
+- cmd: >-
+    dotnet restore Glosharp/Glosharp.csproj
 
-test_script:
-  - cmd: cd Glosharp.Tests
-  - cmd: dotnet test
+    dotnet build Glosharp/Glosharp.csproj
+
+    dotnet restore Glosharp.Tests/Glosharp.Tests.csproj
+
+    dotnet build Glosharp.Tests/Glosharp.Tests.csproj
+deploy:
+- provider: NuGet
+  api_key:
+    secure: QAyphJuWeUivFv7GF8OBVdsKcBslk6xVSfHpAX0T274LyQwdEkrrbalWylFPJWjo
