@@ -9,8 +9,8 @@
     <Author>Glosharp</Author>
     <PackageProjectUrl>https://github.com/glosharp/glosharp</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <VersionSuffix>ALPHA</VersionSuffix>
   </PropertyGroup>
 
   <ItemGroup>

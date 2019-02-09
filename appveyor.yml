@@ -22,6 +22,10 @@ build_script:
     dotnet restore Glosharp.Tests/Glosharp.Tests.csproj
 
     dotnet build Glosharp.Tests/Glosharp.Tests.csproj
+after_build:
+- cmd: >-
+    cd Glosharp
+    dotnet pack
 test_script:
 - cmd: >-
     cd Glosharp.Tests
