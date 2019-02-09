@@ -24,9 +24,7 @@ build_script:
     dotnet build Glosharp.Tests/Glosharp.Tests.csproj
 after_build:
 - cmd: >-
-    cd Glosharp
-    
-    dotnet pack
+    dotnet pack Glosharp/Glosharp.csproj
 test_script:
 - cmd: >-
     cd Glosharp.Tests
