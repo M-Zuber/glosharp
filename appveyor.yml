@@ -25,6 +25,7 @@ build_script:
 after_build:
 - cmd: >-
     cd Glosharp
+    
     dotnet pack
 test_script:
 - cmd: >-
