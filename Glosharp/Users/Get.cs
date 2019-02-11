@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -14,38 +15,15 @@ namespace Glosharp.Users
         /// Gets the current authenticated user.
         /// </summary>
         /// <param name="config"><see cref="Configuration"/></param>
-        /// <param name="allFields"></param>
         /// <returns></returns>
-        public async Task<Tuple<bool, string, User>> GetUserAsync(Configuration config, bool allFields = false)
+        public async Task<Tuple<bool, string, User>> GetUserAsync(Configuration config)
         {
             using (var client = new HttpClient())
             {
-                if (allFields)
-                {
-                    try
-                    {
-                        var url = $"{Constants.UserEndpoints.User()}?fields=email&fields=name&fields=username";
-                        client.BaseAddress = new Uri(url);
-                        client.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", config.Token);
-
-                        var response = await client.GetAsync("");
-                        response.EnsureSuccessStatusCode();
-                        var responseString = await response.Content.ReadAsStringAsync();
-
-                        var user = JsonConvert.DeserializeObject<User>(responseString);
-
-                        return new Tuple<bool, string, User>(true, response.StatusCode.ToString(), user);
-                    }
-                    catch (HttpRequestException httpException)
-                    {
-                        return new Tuple<bool, string, User>(false, httpException.Message, null);
-                    }
-                }
-
                 try
                 {
-                    client.BaseAddress = new Uri(Constants.UserEndpoints.User());
+                    var url = $"{Constants.UserEndpoints.User()}?fields=email&fields=name&fields=username";
+                    client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Authorization =
                         new AuthenticationHeaderValue("Bearer", config.Token);
 
@@ -61,9 +39,22 @@ namespace Glosharp.Users
                 {
                     return new Tuple<bool, string, User>(false, httpException.Message, null);
                 }
+            }   
+        }
 
+        public async Task<Tuple<bool, string, PartialUser>> GetUserPartialAsync(Configuration config)
+        {
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    
+                }
+                catch (HttpRequestException httpException)
+                {
+                    return new Tuple<bool, string, PartialUser>(false, httpException.Message, null);
+                }
             }
-                
         }
     }
 }
