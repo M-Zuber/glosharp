@@ -33,7 +33,7 @@ test_script:
 artifacts:
 - path: '**\*.nupkg'
   name: NuGet
-deploy:
-- provider: NuGet
-  api_key:
-    secure: QAyphJuWeUivFv7GF8OBVdsKcBslk6xVSfHpAX0T274LyQwdEkrrbalWylFPJWjo
+#deploy:
+#- provider: NuGet
+#  api_key:
+#    secure: QAyphJuWeUivFv7GF8OBVdsKcBslk6xVSfHpAX0T274LyQwdEkrrbalWylFPJWjo
