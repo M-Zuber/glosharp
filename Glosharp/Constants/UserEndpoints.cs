@@ -10,5 +10,10 @@ namespace Glosharp.Constants
         {
             return $"{Endpoint.Base}/user";
         }
+
+        public static string UserFull()
+        {
+            return $"{Endpoint.Base}/user?fields=email&fields=name&fields=username";
+        }
     }
 }

@@ -9,5 +9,8 @@ namespace Glosharp.Models.Users
     {
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
+
+        [JsonProperty(PropertyName = "username")]
+        public string Username { get; set; }
     }
 }

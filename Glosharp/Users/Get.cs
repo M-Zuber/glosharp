@@ -16,13 +16,13 @@ namespace Glosharp.Users
         /// </summary>
         /// <param name="config"><see cref="Configuration"/></param>
         /// <returns></returns>
-        public async Task<Tuple<bool, string, User>> GetUserAsync(Configuration config, UserFields fields)
+        public async Task<Tuple<bool, string, User>> GetUserAsync(Configuration config)
         {
             using (var client = new HttpClient())
             {
                 try
                 {
-                    var url = $"{Constants.UserEndpoints.User()}?fields=email&fields=name&fields=username";
+                    var url = Constants.UserEndpoints.UserFull();
                     client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Authorization =
                         new AuthenticationHeaderValue("Bearer", config.Token);
@@ -56,7 +56,7 @@ namespace Glosharp.Users
             {
                 try
                 {
-                    var url = $"{Constants.UserEndpoints.User()}";
+                    var url = Constants.UserEndpoints.User();
                     client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Authorization =
                         new AuthenticationHeaderValue("Bearer", config.Token);

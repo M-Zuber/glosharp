@@ -25,7 +25,7 @@ namespace Glosharp.Tests.Users
             var userGet = new Glosharp.Users.Get();
             
             // Run
-            var userRaw = await userGet.GetUserAsync(configToken, true);
+            var userRaw = await userGet.GetUserAsync(configToken);
 
             userModel.Id = userRaw.Item3.Id;
             userModel.Name = userRaw.Item3.Name;
@@ -39,6 +39,29 @@ namespace Glosharp.Tests.Users
             _output.WriteLine($"Username: {userModel.Username}");
             _output.WriteLine($"Email: {userModel.Email}");
             Assert.Equal("glosharp", userModel.Username);
+        }
+
+        [Fact]
+        public async Task GetUserPartialData()
+        {
+            // Build
+            var configuration = new Configuration.Configuration();
+            var configToken = await configuration.GetConfiguration();
+            var partialUserModel = new PartialUser();
+            var userGet = new Glosharp.Users.Get();
+
+            // Run
+            var partialRaw = await userGet.GetUserPartialAsync(configToken);
+
+            partialUserModel.Id = partialRaw.Item3.Id;
+            partialUserModel.Username = partialRaw.Item3.Username;
+
+            // Assert
+            // Note: This is for the glosharp@protonmail.com user.
+            _output.WriteLine($"Id: {partialUserModel.Id}");
+            _output.WriteLine($"Username: {partialUserModel.Username}");
+
+            Assert.Equal("glosharp", partialUserModel.Username);
         }
     }
 }
