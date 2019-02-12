@@ -19,3 +19,14 @@ The prefered method for installation is NuGet.
 dotnet add package Glosharp
 ```
 
+There are a couple ways that you can set your Personal Access Token. You can set it in the Environment variable named `GlosharpToken` or you can store it in the `config.json` file. 
+
+```powershell
+$env:GlosharpToken=your_personal_token
+```
+or
+```bash
+cp config-example.json config.json
+```
+
+It has not been set up yet to do OAuth, as OAuth may not be in for sometime. 
