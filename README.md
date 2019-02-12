@@ -2,11 +2,20 @@
 
 A C# SDK for working with Gitkraken Glo Boards
 
-**Master Branch**
-[![Build Status](https://travis-ci.org/glosharp/glosharp.svg?branch=master)](https://travis-ci.org/glosharp/glosharp)
+**Master Branch Status**
+
+[![Build status](https://ci.appveyor.com/api/projects/status/079vxniq63ema0h6/branch/master?svg=true)](https://ci.appveyor.com/project/wdhodges/glosharp/branch/master)
 
 
 **Develop Branch**
-[![Build Status](https://travis-ci.org/glosharp/glosharp.svg?branch=develop)](https://travis-ci.org/glosharp/glosharp)
 
-**Note**: This sdk is not ready to be used in a production applications. Breaking changes will be frequent. A change log file will be created once a stable version 0.1 has been released. Should you want to use the SDK during the early stages, use the master branch versus the develop branch.
+[![Build status](https://ci.appveyor.com/api/projects/status/079vxniq63ema0h6?svg=true)](https://ci.appveyor.com/project/wdhodges/glosharp/branch/develop)
+
+# Getting Started
+
+The prefered method for installation is NuGet. 
+
+```
+dotnet add package Glosharp
+```
+
